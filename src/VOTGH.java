@@ -13,6 +13,8 @@ public class VOTGH {
 		static boolean gameRunning = true;
 		//static boolean dungeonEnd = true;
 		
+		static String test;
+		
 		//declare and initialize game variables
 		static String[] enemies = {"Zombie", "Skeleton", "Witch", 
 							"Ghost", "Undead Warrior", "Assassin"};
