@@ -9,8 +9,7 @@ public class VOTGH {
 	//declare and initialize system variables
 		static Scanner in = new Scanner(System.in);
 		static Random rand = new Random();
-		static String gameExit = "Exit";
-		
+		static String gameExit = "Exit";		
 		static boolean gameRunning = true;
 		//static boolean dungeonEnd = true;
 		
