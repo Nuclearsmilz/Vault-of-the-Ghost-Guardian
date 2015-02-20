@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 @SuppressWarnings("unused")
-public class VOTGH {
+public class OldGame {
 	//System.out.println("");
 	//System.out.println("------------------------------------------------------");
 	
