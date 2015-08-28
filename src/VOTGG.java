@@ -37,7 +37,7 @@ public class VOTGG extends Canvas implements Runnable{
 		Dimension size = new Dimension(width * scale, height * scale);
 		setPreferredSize(size);
 		
-		screen = new Screen(width, height);
+		screen = new Screen();
 		frame = new JFrame();
 		key = new Keyboard();
 		choice = new Choices();
