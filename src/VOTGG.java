@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 
 import choices.Choices;
 import graphics.Screen;
+import input.Keyboard;
 
 public class VOTGG extends Canvas implements Runnable{
 	
@@ -23,7 +24,7 @@ public class VOTGG extends Canvas implements Runnable{
 	
 	private Thread thread;
 	private JFrame frame;
-	//private Keyboard key;
+	private Keyboard key;
 	private boolean running = true;
 	
 	private Screen screen;
@@ -36,10 +37,10 @@ public class VOTGG extends Canvas implements Runnable{
 		
 		screen = new Screen(width, height);
 		frame = new JFrame();
-		//key = new Keyboard();
+		key = new Keyboard();
 		choice = new Choices();
 		
-		//addKeyListener(key);
+		addKeyListener(key);
 	}
 		
 	/**
