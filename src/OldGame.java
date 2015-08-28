@@ -109,7 +109,7 @@ public class OldGame {
 				 boolean isEarth;
 				 boolean isWind;
 						
-			//Medic Classes (leveled ups as well, or mixed)
+			//Medic or Healer Classes (leveled ups as well, or mixed)
 			 boolean isPriest;
 			 boolean isBattlePriest;
 			 boolean isTemplar;
@@ -117,19 +117,19 @@ public class OldGame {
 						
 			//Misc Classes (leveled ups as well, or mixed)
 			 boolean isScout; //rogue and hunter
-			 boolean isMonk;
-			 boolean isEngineer;
-			 boolean isAlchemist;
-			 boolean isPsychic;
-			 boolean isGunslinger;
+			 boolean isMonk; //mage and MAYBE healer
+			 boolean isEngineer; //....knight?
+			 boolean isAlchemist; //mage
+			 boolean isPsychic; //mage
+			 boolean isGunslinger; //hunter and knight
 				
 			//RARE Classes (ONLY level ups)
 			 boolean isIce; //Rare magic class
 			 boolean isGlassCannon; //A quick and powerful individual who does NOT want to get hit. Made of glass. 
 			//If he was made of a stronger material, he could be very powerful. Indestructible even.
-			 boolean isGameBreaker; //Jack of all Stats: risks being a Master of None if his skills 
+			 boolean isGameBreaker; //Jack of all Stats: risks being a Master of Nothing if his skills 
 			//don't have synergy. On the other hand, if they do overlap, you'll find yourself 
-			//having a magic-slinging Master Of All with a stats total up the wazoo; in short, 
+			//having a magic-slinging Master Of ALL with a stats total up the wazoo; in short, 
 			//a Game Breaker.
 			 boolean isRealityWarper;// N/A; Breaks time and space.
 		}
