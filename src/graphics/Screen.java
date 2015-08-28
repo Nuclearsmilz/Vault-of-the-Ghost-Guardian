@@ -17,7 +17,7 @@ public class Screen extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
+				try {                
 					Screen frame = new Screen();
 					frame.setVisible(true);
 				} catch (Exception e) {
