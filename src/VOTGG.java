@@ -74,11 +74,9 @@ public class VOTGG extends Canvas implements Runnable{
 			delta += (now - lastTime) / ns;
 			lastTime = now;
 			while(delta >= 1) {
-				tick();
 				ticks++;
 				delta--;
 			}
-			//render();
 			frames++;
 			
 			if(System.currentTimeMillis() - timer > 1000) {
@@ -90,16 +88,6 @@ public class VOTGG extends Canvas implements Runnable{
 			}
 		}
 		stop();
-	}
-
-	//int x = 0, y = 0;
-	
-	public void tick() {
-		//key.update();
-		//if (key.up) y++;
-		//if (key.down) y--;
-		//if (key.left) x++;
-		//if (key.right) x--;
 	}
 		
 	public static void main(String[] args) {
