@@ -16,12 +16,31 @@ public class VOTGG {
 	 * Declare & Initialize Game Variables
 	 * TODO: Come up with enemies and boss name ideas
 	 */
-	static String[] enemies = {};
+	static String[] enemies = {"Zombie", "Skeleton", "Witch",
+			"Ghost", "Undead Warrior", "Assassin"};
 	static String[] bosses = {};
+	static String finalBossStage1 = "Ghost Guardian";
+	static String finalBossStage2 = "Undead Guardian";
+	static String finalBossStage3 = "Resurrected Guardian";
 	static int maxEnemyHP = 60;
 	static int enemyAttackPower = 20;
 	//static int maxBossHP = 1000;
 	//static int basicBossAttackPower = 60;
+	
+	/**
+	 * Declare & Initialize Game Choices
+	 */
+	static String startingChoice;
+	static String forestChoice;
+	static String nightChoice;
+	static String nightForestChoice;
+	static String nightTreeChoice;
+	static String deathSwimChoice;
+	static String deathCliffChoice;
+	static String dungeonChoice;
+	static String enemyChoice;
+	static String waterChoice;
+	static String shoreChoice;
 	
 	/**
 	 * Declare & Initialize Player Variables
