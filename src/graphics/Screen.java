@@ -1,23 +1,41 @@
 package graphics;
 
-import java.util.Random;
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
 
-public class Screen {
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+public class Screen extends JFrame {
 	
-	private int width, height;
-	public int[] pixels;
+	private JPanel contentPane;
 	
-	private Random rand = new Random();
-	
-	public Screen(int width, int height) {
-		this.width = width;
-		this.height = height;
-		pixels = new int[width * height];
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Screen frame = new Screen();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 	
-	public void clear() {
-		for(int i = 0; i < pixels.length; i++) {
-			pixels[i] = 0;
-		}
-	}
+	/**
+	 * Create the frame.
+	 */
+	public Screen() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+	}	
 }
