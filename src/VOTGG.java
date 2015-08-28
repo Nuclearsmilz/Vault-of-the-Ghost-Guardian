@@ -10,6 +10,8 @@ import graphics.Screen;
 import input.Keyboard;
 
 public class VOTGG extends Canvas implements Runnable{
+
+	private static final long serialVersionUID = 1L;
 	
 	/**
 	 * Declare & Initialize System Variables
