@@ -1,17 +1,47 @@
+import java.awt.Canvas;
+import java.awt.Dimension;
 import java.util.Random;
 import java.util.Scanner;
 
-public class VOTGG {
+import javax.swing.JFrame;
+
+import choices.Choices;
+import graphics.Screen;
+
+public class VOTGG extends Canvas implements Runnable{
 	
 	/**
 	 * Declare & Initialize System Variables
 	 */
-	static Scanner in = new Scanner(System.in);
-	static Random rand = new Random();
-	static String gameExit = "Exit";
+	public static int width = 300;
+	public static int height = width / 16 * 9;
+	public static int scale = 3;
+	public static Scanner in = new Scanner(System.in);
+	public static Random rand = new Random();
+	public static String title = "Vault of the Ghost Guardian";
+	public static String gameExit = "Exit";
 	
-	static boolean gameRunning = true;
+	private Thread thread;
+	private JFrame frame;
+	//private Keyboard key;
+	private boolean running = true;
 	
+	private Screen screen;
+	private Choices choice;
+	
+	public VOTGG() {
+		
+		Dimension size = new Dimension(width * scale, height * scale);
+		setPreferredSize(size);
+		
+		screen = new Screen(width, height);
+		frame = new JFrame();
+		//key = new Keyboard();
+		choice = new Choices();
+		
+		//addKeyListener(key);
+	}
+		
 	/**
 	 * Declare & Initialize Game Variables
 	 * TODO: Come up with enemies and boss name ideas
@@ -27,22 +57,7 @@ public class VOTGG {
 	//static int maxBossHP = 1000;
 	//static int basicBossAttackPower = 60;
 	
-	/**
-	 * Declare & Initialize Game Choices
-	 */
-	static String startingChoice;
-	static String forestChoice;
-	static String nightChoice;
-	static String nightForestChoice;
-	static String nightTreeChoice;
-	static String deathSwimChoice;
-	static String deathCliffChoice;
-	static String dungeonChoice;
-	static String enemyChoice;
-	static String waterChoice;
-	static String shoreChoice;
-	
-	/**
+		/**
 	 * Declare & Initialize Player Variables
 	 */
 	
@@ -67,6 +82,12 @@ public class VOTGG {
 	 */
 	
 	public static void main(String[] args) {
+		
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
 		
 	}
 }
