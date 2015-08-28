@@ -42,6 +42,63 @@ public class VOTGG extends Canvas implements Runnable{
 		
 		addKeyListener(key);
 	}
+	
+	public synchronized void start() {
+		running = true;
+		thread = new Thread(this, "Display");
+		thread.start();
+	}
+	
+	public synchronized void stop() {
+		running = false;
+		try {
+			thread.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void run() {
+		long lastTime = System.nanoTime();
+		long timer = System.currentTimeMillis();
+		final double ns = 100000000.0 / 60.0;
+		double delta = 0;
+		int frames = 0;
+		int ticks = 0;
+		
+		requestFocus();
+		while(running) {
+			long now = System.nanoTime();
+			delta += (now - lastTime) / ns;
+			lastTime = now;
+			while(delta >= 1) {
+				tick();
+				ticks++;
+				delta--;
+			}
+			//render();
+			frames++;
+			
+			if(System.currentTimeMillis() - timer > 1000) {
+				timer += 1000;
+				System.out.println(ticks + " ups, " + frames + " fps");
+				frame.setTitle(title + "  |  " + ticks + " ups, " + frames + " fps");
+				ticks = 0;
+				frames = 0;
+			}
+		}
+		stop();
+	}
+
+	//int x = 0, y = 0;
+	
+	public void tick() {
+		//key.update();
+		//if (key.up) y++;
+		//if (key.down) y--;
+		//if (key.left) x++;
+		//if (key.right) x--;
+	}
 		
 	/**
 	 * Declare & Initialize Game Variables
@@ -83,12 +140,15 @@ public class VOTGG extends Canvas implements Runnable{
 	 */
 	
 	public static void main(String[] args) {
+		VOTGG game = new VOTGG();
+		game.frame.setResizable(false);
+		game.frame.setTitle(VOTGG.title);
+		game.frame.add(game);
+		game.frame.pack();
+		game.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		game.frame.setLocationRelativeTo(null);
+		game.frame.setVisible(true);
 		
-	}
-
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		
+		game.start();
 	}
 }
